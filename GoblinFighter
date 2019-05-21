@@ -1,0 +1,67 @@
+import random
+
+goblinHealth = 10
+yourHealth = 25
+
+goblinDamage = random.randint(0, 3)
+yourDamage = random.randint(0, 5)
+
+fighting = True
+
+lootAmount = random.randint(3, 5)
+
+
+userName = input("What is your character name? ")
+print()
+print("Hello, {}!".format(userName))
+print()
+
+print("{}, as you are walking through the forest, you come across a goblin.".format(userName))
+fight = input("Would you like to fight the goblin? Y or N ")
+print()
+while fight.upper() != "Y" and fight.upper() != "N":
+    fight = input("Sorry, it's a yes or no question.  Would you like to fight the goblin? Y or N ")
+    print()
+if fight.upper() == "N":
+    print("{}, I didn't take you for the cowardly type.  Oh well, you get away without harm.".format(userName))
+elif fight.upper() == "Y":
+    while fighting:
+        print("You swing your dagger at the goblin!")
+        print("You caused {} damage!".format(yourDamage))
+        goblinHealth -= yourDamage
+        yourDamage = random.randint(0, 5)
+        print("The goblin recoils back causing you {} damage.".format(goblinDamage))
+        yourHealth -= goblinDamage
+        goblinDamage = random.randint(0, 3)
+        print()
+        print("{}'s health: {}".format(userName, yourHealth))
+        print("The goblin's health: {}".format(goblinHealth))
+        print()
+
+        if yourHealth <= 0:
+            print("You died!  Too bad...")
+            break
+        elif goblinHealth <= 0:
+            print("You defeated the goblin!  Well done, {}!".format(userName))
+            print()
+            loot = input("{}, would you like to loot the goblin? Y or N".format(userName))
+            print()
+            while loot.upper() != "Y" and loot.upper() != "N":
+                loot = input("Sorry, it's a yes or no question. Would you like to loot the goblin? Y or N" )
+                print()
+            if loot.upper() == "Y":
+                print("You loot {} gold coins from the goblin.".format(lootAmount))
+            elif loot.upper() == "N":
+                print("Just in it for the blood, eh, {}?".format(userName))
+            break
+        elif goblinHealth > 0 and yourHealth > 0:
+            keepFighting = input("Do you wish to continue fighting? Y or N")
+            print()
+            while keepFighting.upper() != "Y" and keepFighting.upper() != "N":
+                keepFighting = input("Sorry, it's a yes or no question. Would you like to keep fighting? Y or N" )
+                print()
+            if keepFighting.upper() == "Y":
+                fighting = True
+            elif keepFighting.upper() == "N":
+                print("Scared silly, huh, {}?".format(userName))
+                break
