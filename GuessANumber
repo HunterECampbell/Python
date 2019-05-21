@@ -1,0 +1,38 @@
+import random
+
+randNum = random.randint(1, 10)
+guesses = 3
+
+guess = input("Guess a number between 1 and 10 ")
+print()
+
+while int(guess) < 1 or int(guess) > 10:
+    guess = input("Sorry, that's not a number between 1 and 10. Guess again: ")
+
+while guesses > 1:
+    if int(guess) == randNum:
+        print("You guessed my number of: {}".format(randNum))
+        print("You win!")
+        break
+    elif int(guess) > randNum:
+        print("Your guess was: {}".format(int(guess)))
+        print("Guesses remaining: {}".format(guesses-1))
+        guess = input("Guess lower: ")
+        print()
+        guesses -= 1
+    elif int(guess) < randNum:
+        print("Your guess was: {}".format(int(guess)))
+        print("Guesses remaining: {}".format(guesses-1))
+        guess = input("Guess higher: ")
+        print()
+        guesses -= 1
+
+
+if int(guess) != randNum:
+    print("Sorry, you ran out of guesses.")
+    print("My number was: {}".format(randNum))
+    print("You lose.")
+
+if int(guess) == randNum and guesses == 1:
+    print("You guessed my number of: {}".format(randNum))
+    print("You win!")
