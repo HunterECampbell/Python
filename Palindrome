@@ -1,0 +1,16 @@
+def palindrome(word):
+  backwards = word[::-1].lower()
+
+  print("Your word: {}".format(word.title()))
+  print("Backwards: {}".format(backwards.title()))
+  if backwards == word.lower():
+    print("Your word is a palindrome!")
+  else:
+    print("Your word is not a palindrome.")
+  print()
+
+
+palindrome("racecar")
+palindrome("Hello")
+palindrome("superfluous")
+palindrome("deed")
