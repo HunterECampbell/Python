@@ -262,7 +262,6 @@ elif randCar == "N":
     print("Cost: ${}0".format(total))
 
 
-
   if chooseCar == "N":
     print("Thank for coming by!")
     print("Have a great day!")
