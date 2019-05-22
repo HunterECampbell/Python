@@ -169,7 +169,6 @@ if randCar == "Y":
 elif randCar == "N":
 
   chooseCar = input("Would you like to choose your car? [Y/N] ").upper()
-  print()
 
   while chooseCar != "Y" and chooseCar != "N":
     print("I'm sorry, I didn't understand.")
@@ -178,23 +177,21 @@ elif randCar == "N":
 
   if chooseCar == "Y":
     total = 0
+    print()
     for i in makes:
       print(i)
 
     chooseMake = input("Choose a make from the list above: ").title()
-    print()
 
     while chooseMake not in makes:
-      print("I'm sorry, I didn't understand.")
       chooseMake = input("Choose a make from the list above: ").title()
-      print()
 
     if chooseMake == "Chevy":
+      print()
       for i in chevy:
         print(i)
 
       chooseModel = input("Choose a model from the list above: ").title()
-      print()
 
       while chooseModel not in chevy:
         chooseModel = input("Choose a model from the list above: ").title()
@@ -202,11 +199,11 @@ elif randCar == "N":
       
 
     elif chooseMake == "Ford":
+      print()
       for i in ford:
         print(i)
 
       chooseModel = input("Choose a model from the list above: ").title()
-      print()
 
       while chooseModel not in ford:
         chooseModel = input("Choose a model from the list above: ").title()
@@ -214,11 +211,11 @@ elif randCar == "N":
 
 
     elif chooseMake == "Honda":
+      print()
       for i in honda:
         print(i)
 
       chooseModel = input("Choose a model from the list above: ").title()
-      print()
 
       while chooseModel not in honda:
         chooseModel = input("Choose a model from the list above: ").title()
@@ -226,11 +223,11 @@ elif randCar == "N":
 
 
     elif chooseMake == "Tesla":
+      print()
       for i in tesla:
         print(i)
 
       chooseModel = input("Choose a model from the list above: ").title()
-      print()
 
       while chooseModel not in tesla:
         chooseModel = input("Choose a model from the list above: ").title()
@@ -238,17 +235,17 @@ elif randCar == "N":
 
 
     elif chooseMake == "Toyota":
+      print()
       for i in toyota:
         print(i)
 
       chooseModel = input("Choose a model from the list above: ").title()
-      print()
 
       while chooseModel not in toyota:
         chooseModel = input("Choose a model from the list above: ").title()
       total = toyota[chooseModel]
 
-
+    print()
     for i in colors:
       print(i)
     chooseColor = input("Choose a color from the list above: ").title()
