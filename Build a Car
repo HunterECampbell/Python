@@ -257,11 +257,12 @@ elif randCar == "N":
       chooseColor = input("Choose a color from the list above: ").title()
 
     total += colors[chooseColor]
+    total = format(total, ",")
     print()
     print("Congratulations! Here is your new car:")
     print("Make: {}".format(chooseMake))
     print("Model: {}".format(chooseModel))
-    print("Cost: {}".format(total))
+    print("Cost: ${}0".format(total))
 
 
 
