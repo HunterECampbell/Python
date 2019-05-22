@@ -1,0 +1,53 @@
+import random
+
+makes = [
+  "Chevy",
+  "Ford",
+  "Honda",
+  "Tesla",
+  "Toyota"
+]
+
+chevy = {
+  "Camaro": 25000.00,
+  "Cruze": 17995.00,
+  "Equinox": 23800.00,
+  "Malibu": 22095.00,
+  "Tahoe": 48000.00
+}
+ford = {
+  "F-150": 28155.00,
+  "Fiesta": 14260.00,
+  "Focus": 17950.00,
+  "Mustang": 26395.00,
+  "Taurus": 27800.00
+}
+honda = {
+  "Accord": 23720.00,
+  "Civic": 19450.00,
+  "CR-V": 24350.00,
+  "Odyssey": 30190.00,
+  "Ridgeline": 29990.00
+}
+tesla = {
+  "Model 3": 39900.00,
+  "Model S": 75000.00,
+  "Model Y": 48000.00,
+  "Model X": 81000.00,
+  "Roadster": 100000.00
+}
+toyota = {
+  "Avalon": 35650.00,
+  "Camry": 24095.00,
+  "Corolla": 19500.00,
+  "Prius": 23770.00,
+  "Sienna": 31415.00
+}
+
+colors = {
+  "Black": 0.00,
+  "Blue": 1000.00,
+  "Grey": 1000.00,
+  "Red": 1000.00,
+  "White": 1000.00
+}
