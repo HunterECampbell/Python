@@ -32,8 +32,8 @@ honda = {
 tesla = {
   "Model 3": 39900.00,
   "Model S": 75000.00,
-  "Model Y": 48000.00,
   "Model X": 81000.00,
+  "Model Y": 48000.00,
   "Roadster": 100000.00
 }
 toyota = {
@@ -51,3 +51,220 @@ colors = {
   "Red": 1000.00,
   "White": 1000.00
 }
+
+
+make = {}
+makeStr = ""
+model = ""
+color = ""
+totalCost = 0
+
+randMake = random.randint(1,5)
+randChevy = random.randint(1,5)
+randFord = random.randint(1,5)
+randHonda = random.randint(1,5)
+randTesla = random.randint(1,5)
+randToyota = random.randint(1,5)
+randColor = random.randint(1,5)
+
+if randMake == 1:
+  make = chevy
+  makeStr = "Chevy"
+  if randChevy == 1:
+    model = "Camaro"
+  elif randChevy == 2:
+    model = "Cruze"
+  elif randChevy == 3:
+    model = "Equinox"
+  elif randChevy == 4:
+    model = "Malibu"
+  elif randChevy == 5:
+    model = "Tahoe"
+
+elif randMake == 2:
+  make = ford
+  makeStr = "Ford"
+  if randFord == 1:
+    model = "F-150"
+  elif randFord == 2:
+    model = "Fiesta"
+  elif randFord == 3:
+    model = "Focus"
+  elif randFord == 4:
+    model = "Mustang"
+  elif randFord == 5:
+    model = "Tahoe"
+
+elif randMake == 3:
+  make = honda
+  makeStr = "Honda"
+  if randHonda == 1:
+    model = "Accord"
+  elif randHonda == 2:
+    model = "Civic"
+  elif randHonda == 3:
+    model = "CR-V"
+  elif randHonda == 4:
+    model = "Odyssey"
+  elif randHonda == 5:
+    model = "Ridgeline"
+
+elif randMake == 4:
+  make = tesla
+  makeStr = "Tesla"
+  if randTesla == 1:
+    model = "Model 3"
+  elif randTesla == 2:
+    model = "Model S"
+  elif randTesla == 3:
+    model = "Model X"
+  elif randTesla == 4:
+    model = "Model Y"
+  elif randTesla == 5:
+    model = "Roadster"
+
+elif randMake == 5:
+  make = toyota
+  makeStr = "Toyota"
+  if randToyota == 1:
+    model = "Avalon"
+  elif randToyota == 2:
+    model = "Camry"
+  elif randToyota == 3:
+    model = "Corolla"
+  elif randToyota == 4:
+    model = "Prius"
+  elif randToyota == 5:
+    model = "Sienna"
+
+if randColor == 1:
+  color = "Black"
+elif randColor == 2:
+  color = "Blue"
+elif randColor == 3:
+  color = "Grey"
+elif randColor == 4:
+  color = "Red"
+elif randColor == 5:
+  color = "White"
+
+totalCost = colors[color] + make[model]
+totalCost = format(totalCost, ",")
+
+
+randCar = input("Would you like to buy a random car? [Y/N] ").upper()
+print()
+while randCar != "Y" and randCar != "N":
+  print("I'm sorry, I didn't understand.")
+  randCar = input("Would you like to buy a random car? [Y/N] ").upper()
+  print()
+
+if randCar == "Y":
+  print("Congratulations! This is your new car:")
+  print("Make:", makeStr)
+  print("Model:", model)
+  print("Color:", color)
+  print("Cost: ${}0".format(totalCost))
+
+elif randCar == "N":
+
+  chooseCar = input("Would you like to choose your car? [Y/N] ").upper()
+  print()
+
+  while chooseCar != "Y" and chooseCar != "N":
+    print("I'm sorry, I didn't understand.")
+    chooseCar = input("Would you like to buy a random car? [Y/N] ").upper()
+    print()
+
+  if chooseCar == "Y":
+    total = 0
+    for i in makes:
+      print(i)
+
+    chooseMake = input("Choose a make from the list above: ").title()
+    print()
+
+    while chooseMake not in makes:
+      print("I'm sorry, I didn't understand.")
+      chooseMake = input("Choose a make from the list above: ").title()
+      print()
+
+    if chooseMake == "Chevy":
+      for i in chevy:
+        print(i)
+
+      chooseModel = input("Choose a model from the list above: ").title()
+      print()
+
+      while chooseModel not in chevy:
+        chooseModel = input("Choose a model from the list above: ").title()
+      total = chevy[chooseModel]
+      
+
+    elif chooseMake == "Ford":
+      for i in ford:
+        print(i)
+
+      chooseModel = input("Choose a model from the list above: ").title()
+      print()
+
+      while chooseModel not in ford:
+        chooseModel = input("Choose a model from the list above: ").title()
+      total = ford[chooseModel]
+
+
+    elif chooseMake == "Honda":
+      for i in honda:
+        print(i)
+
+      chooseModel = input("Choose a model from the list above: ").title()
+      print()
+
+      while chooseModel not in honda:
+        chooseModel = input("Choose a model from the list above: ").title()
+      total = honda[chooseModel]
+
+
+    elif chooseMake == "Tesla":
+      for i in tesla:
+        print(i)
+
+      chooseModel = input("Choose a model from the list above: ").title()
+      print()
+
+      while chooseModel not in tesla:
+        chooseModel = input("Choose a model from the list above: ").title()
+      total = tesla[chooseModel]
+
+
+    elif chooseMake == "Toyota":
+      for i in toyota:
+        print(i)
+
+      chooseModel = input("Choose a model from the list above: ").title()
+      print()
+
+      while chooseModel not in toyota:
+        chooseModel = input("Choose a model from the list above: ").title()
+      total = toyota[chooseModel]
+
+
+    for i in colors:
+      print(i)
+    chooseColor = input("Choose a color from the list above: ").title()
+
+    while chooseColor not in colors:
+      chooseColor = input("Choose a color from the list above: ").title()
+
+    total += colors[chooseColor]
+    print()
+    print("Congratulations! Here is your new car:")
+    print("Make: {}".format(chooseMake))
+    print("Model: {}".format(chooseModel))
+    print("Cost: {}".format(total))
+
+
+
+  if chooseCar == "N":
+    print("Thank for coming by!")
+    print("Have a great day!")
