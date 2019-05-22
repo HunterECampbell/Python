@@ -1,0 +1,34 @@
+import random
+
+compChoice = random.randint(1,3)
+yourChoice = input("Choose Rock, Paper, or Scissors ").upper()
+print()
+
+if compChoice == 1:
+  compChoice = "ROCK"
+elif compChoice == 2:
+  compChoice = "PAPER"
+else:
+  compChoice = "SCISSORS"
+
+while yourChoice != "ROCK" and yourChoice != "PAPER" and yourChoice != "SCISSORS":
+  yourChoice = input("Sorry, I didn't understand your answer. Rock, Paper, or Scissors? ").upper()
+  print()
+
+
+print("You chose: {}".format(yourChoice))
+print("The computer chose: {}".format(compChoice))
+if yourChoice == compChoice:
+  print("It's a tie!")
+elif yourChoice == "ROCK" and compChoice == "PAPER":
+  print("Computer wins!")
+elif yourChoice == "ROCK" and compChoice == "SCISSORS":
+  print("You win!")
+elif yourChoice == "PAPER" and compChoice == "ROCK":
+  print("You win!")
+elif yourChoice == "PAPER" and compChoice == "SCISSORS":
+  print("Compter wins!")
+elif yourChoice == "SCISSORS" and compChoice == "ROCK":
+  print("Compter wins!")
+elif yourChoice == "SCISSORS" and compChoice == "PAPER":
+  print("You win!")
