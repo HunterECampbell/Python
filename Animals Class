@@ -1,0 +1,27 @@
+class Animal:
+  def __init__ (self, animalName, legNumber, mammal, reptile):
+    self.animalName = animalName
+    self.legNumber = legNumber
+    self.mammal = mammal
+    self.reptile = reptile
+
+zebra = Animal("Zebra", 4, True, False)
+snake = Animal("Snake", 0, False, True)
+robin = Animal("Robin", 2, False, False)
+cat = Animal("Cat", 4, True, False)
+salmon = Animal("Salmon", 0, False, False)
+giraffe = Animal("Giraffe", 4, True, False)
+
+def printAnimal(name):
+  print("Animal: {}".format(name.animalName))
+  print("Legs: {}".format(name.legNumber))
+  print("Mammal: {}".format(name.mammal))
+  print("Reptile: {}".format(name.reptile))
+  print
+
+printAnimal(zebra)
+printAnimal(snake)
+printAnimal(robin)
+printAnimal(cat)
+printAnimal(salmon)
+printAnimal(giraffe)
