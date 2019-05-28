@@ -3,7 +3,7 @@ import random
 class Archery:
   def __init__(self, arrows: int):
     self.arrows = arrows
-    self.hit = 0
+    self.aim = 0
     self.miss = 0
     self.low = 0
     self.medium = 0
@@ -13,14 +13,14 @@ class Archery:
 
   def shootAtTarget(self):
     while self.arrows > 0:
-      self.hit = random.randint(0,12)
-      if self.hit >= 1 and self.hit <= 5:
+      self.aim = random.randint(0,12)
+      if self.aim >= 1 and self.aim <= 5:
         self.low = self.low + 1
         self.arrows = self.arrows - 1
-      elif self.hit >= 6 and self.hit <= 8:
+      elif self.aim >= 6 and self.aim <= 8:
         self.medium = self.medium + 1
         self.arrows = self.arrows - 1
-      elif self.hit >= 9 and self.hit <= 10:
+      elif self.aim >= 9 and self.aim <= 10:
         self.bullseye = self.bullseye + 1
         self.arrows = self.arrows - 1
       else:
