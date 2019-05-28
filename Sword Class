@@ -1,0 +1,103 @@
+class Sword:
+    def __init__(self, material: str, length: float):
+            self.material = material.title()
+            self.length = length
+
+    ironW = 0.284
+    steelW = 0.283
+    silverW = 0.38
+    goldW = 0.69375
+    obsidianW = 0.09
+    weight = 0
+    def findWeight(self):
+        if self.material == "Iron":
+            Sword.weight = self.length * Sword.ironW * (1/2)
+            return Sword.weight
+        elif self.material == "Steel":
+            Sword.weight = self.length * Sword.steelW * (1/2)
+            return Sword.weight
+        elif self.material == "Silver":
+            Sword.weight = self.length * Sword.silverW * (1/2)
+            return Sword.weight
+        elif self.material == "Gold":
+            Sword.weight = self.length * Sword.goldW * (1/2)
+            return Sword.weight
+        elif self.material == "Obsidian":
+            Sword.weight = self.length * Sword.obsidianW * (1/2)
+            return Sword.weight
+        else:
+            Sword.weight = "Unknown"
+            return Sword.weight
+
+    name = ""
+    def giveName(self, name: str):
+        self.name = name
+        return self.name
+
+    sharpness = 0
+    def sharpen(self, amount: int):
+        self.amount = amount
+        if(self.amount in range(1,4)):
+            Sword.sharpness = "+"*self.amount
+        else:
+            Sword.sharpness = "You broke the sword."
+
+    def printC(self):
+        print()
+        if self.name != "":
+            print(self.name)
+        print("Material: {}".format(self.material))
+        if Sword.sharpness != "You broke the sword.":
+            print("Length: {} inches".format(self.length))
+            if Sword.weight == "Unknown":
+                print("Weight: {}".format(Sword.weight))
+            elif Sword.weight > 0:
+                print("Weight: {} lbs".format(Sword.weight))
+            Sword.weight = 0
+            print("Sharpness Level: {}".format(Sword.sharpness))
+            Sword.sharpness = 0
+        else:
+            print(Sword.sharpness)
+            Sword.sharpness = 0
+#End of Sword Class
+
+
+newSword = Sword("Iron", 32)
+newSword.findWeight()
+newSword.printC()
+
+steelSword = Sword("Steel", 32)
+steelSword.findWeight()
+steelSword.printC()
+
+silverSword = Sword("Silver", 32)
+silverSword.findWeight()
+silverSword.printC()
+
+goldSword = Sword("gold", 32)
+goldSword.findWeight()
+goldSword.sharpen(6)
+goldSword.printC()
+
+obsidianSword = Sword("ObSiDiAn", 32)
+obsidianSword.findWeight()
+obsidianSword.printC()
+
+mithrilSword = Sword("MITHRIL", 32)
+mithrilSword.findWeight()
+mithrilSword.sharpen(2)
+mithrilSword.printC()
+
+Excaliber = Sword("Silver", 32)
+Excaliber.findWeight()
+Excaliber.giveName("Excaliber")
+Excaliber.sharpen(3)
+Excaliber.printC()
+
+herSword = Sword("Gold", 6)
+herSword.findWeight()
+herSword.giveName("Patricia")
+herSword.printC()
+
+ra = Sword("mat", 32)
+ra.printC()
