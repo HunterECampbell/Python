@@ -1,0 +1,47 @@
+import random
+
+class Archery:
+  def __init__(self, arrows: int):
+    self.arrows = arrows
+    self.hit = 0
+    self.miss = 0
+    self.low = 0
+    self.medium = 0
+    self.bullseye = 0
+    self.score = 0
+
+
+  def shootAtTarget(self):
+    while self.arrows > 0:
+      self.hit = random.randint(0,12)
+      if self.hit >= 1 and self.hit <= 5:
+        self.low = self.low + 1
+        self.arrows = self.arrows - 1
+      elif self.hit >= 6 and self.hit <= 8:
+        self.medium = self.medium + 1
+        self.arrows = self.arrows - 1
+      elif self.hit >= 9 and self.hit <= 10:
+        self.bullseye = self.bullseye + 1
+        self.arrows = self.arrows - 1
+      else:
+        self.miss = self.miss + 1
+        self.arrows = self.arrows - 1
+    self.score = self.low + (self.medium * 3) + (self.bullseye * 5)
+
+  def printResults(self):
+    print()
+    if self.arrows > 0:
+      print("You haven't shot any arrows yet")
+    else:
+      print("Misses: {}".format(self.miss))
+      print("Low Score Hits: {}".format(self.low))
+      print("Medium Score Hits: {}".format(self.medium))
+      print("Bullseye hits: {}".format(self.bullseye))
+      print("Total Score: {}".format(self.score))
+#End of Archery class
+
+
+newArcher = Archery(10)
+newArcher.printResults()
+newArcher.shootAtTarget()
+newArcher.printResults()
