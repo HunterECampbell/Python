@@ -1,0 +1,40 @@
+def fact(n):
+  if isinstance(n, int):
+    if n == 0:
+      return 1
+    else:
+      return n * fact(n-1)
+  return "'{}' not a valid number".format(n)
+
+print(fact("a"))
+print(fact(5))
+print()
+
+
+numsUp = []
+def countUp(n):
+  global numsUp
+  if n in range(0, 101):
+    numsUp.append(n)
+    countUp(n+1)
+  else:
+    return "Range: 0-100. \n{} not in range".format(n)
+  return numsUp
+
+print(countUp(150))
+print(countUp(0))
+print()
+
+
+numsDown = []
+def countDown(n):
+  global numsDown
+  if n in range(0, 101):
+    numsDown.append(n)
+    countDown(n-1)
+  else:
+    return "Range: 0-100. \n{} not in range".format(n)
+  return numsDown
+
+print(countDown(180))
+print(countDown(100))
