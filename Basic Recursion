@@ -18,7 +18,7 @@ def countUp(n):
     numsUp.append(n)
     countUp(n+1)
   else:
-    return "Range: 0-100. \n{} not in range".format(n)
+    return "Range: 0-100 \n{} not in range".format(n)
   return numsUp
 
 print(countUp(150))
@@ -33,7 +33,7 @@ def countDown(n):
     numsDown.append(n)
     countDown(n-1)
   else:
-    return "Range: 0-100. \n{} not in range".format(n)
+    return "Range: 0-100 \n{} not in range".format(n)
   return numsDown
 
 print(countDown(180))
