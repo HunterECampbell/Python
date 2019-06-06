@@ -1,0 +1,8 @@
+def label_env(lst):
+  if len(lst) == 0:
+    return "No addresses"
+  else:
+    print("Labelled {address}'s Hogwarts envelope".format(address=lst[0].title()))
+    return label_env(lst[1:])
+
+print(label_env(["Fred", "George", "ron", "ginny"]))
