@@ -1,0 +1,50 @@
+class Eat:
+  dead = False
+  def __init__(self, name, food=0):
+    self.name = name.title()
+    self.food = food
+    print("Welcome: {}".format(self.name))
+    print("Food: {}".format(self.food))
+    print()
+
+  def eat(self, amount=1):
+    if self.dead:
+      print("Dead things can't eat.")
+    else:
+      self.food += amount
+      if self.food >= 5:
+        print("{}, you ate too quickly! Your stomach exploded!".format(self.name))
+        print("{} died.".format(self.name))
+        self.dead = True
+      else:
+        print("{} ate: {} food".format(self.name, amount))
+        print("Food: {}".format(self.food))
+    print()
+    
+  def digest(self, digest=1):
+    if self.dead:
+      print("Dead things can't digest properly.")
+    else:
+      self.food -= digest
+      if self.food <= -1:
+        print("{} starved to death!".format(self.name))
+        self.dead = True
+      else:
+        print("{} digested: {} food".format(self.name, digest))
+        print("Food: {}".format(self.food))
+    print()
+# End of Eat Class
+
+
+shark = Eat("shark")
+shark.eat(4)
+shark.digest(3)
+shark.eat(4)
+shark.digest(3)
+shark.eat(2)
+print()
+
+turtle = Eat("turtle")
+turtle.eat()
+turtle.digest()
+turtle.eat(2)
