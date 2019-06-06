@@ -1,0 +1,10 @@
+def combo(lst):
+  if len(lst) == 0:
+    return [[]]
+  combo_without_first = combo(lst[1:])
+  combo_with_first = [[lst[0]] + rest for rest in combo_without_first]
+  return combo_with_first + combo_without_first
+
+dogs = combo(["Lab", "Pug", "German Shepherd", "Bulldog", "Dalmation"])
+for dog_combo in dogs:
+  print(dog_combo)
