@@ -1,0 +1,15 @@
+def find_largest(lst):
+  if len(lst) == 1:
+    return lst
+  else:
+    half = len(lst) // 2
+    first = lst[:half]
+    last = lst[half:]
+    if first > last:
+      lst = first
+    else:
+      lst = last
+    return find_largest(lst)
+
+balls = [0, 0, 0, 0, 1, 0, 0, 0]
+print(find_largest(balls))
