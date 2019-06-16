@@ -21,6 +21,7 @@ def balance(lst):
   half = len(lst) // 2
   first = lst[:half]
   last = lst[half:]
+
   if len(lst) == 2:
     print
     print("Largest number weighed out of all the largest halfs:")
@@ -37,6 +38,7 @@ def balance(lst):
       first_total += item
     for item in last:
       last_total += item
+      
     print
     print("First Total: {}".format(first_total))
     print("Last Total: {}".format(last_total))
