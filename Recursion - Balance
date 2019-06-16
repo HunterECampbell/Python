@@ -1,0 +1,19 @@
+def find_larger_lst(lst1, lst2):
+  if lst1 > lst2:
+    return lst1
+  return lst2
+
+my_lst = [0, 0, 0, 0, 0, 0, 1, 0]
+
+def balance(lst):
+  if len(lst) == 1:
+    return lst
+  else:
+    half = len(lst) // 2
+    first = lst[:half]
+    last = lst[half:]
+
+    new_lst = find_larger_lst(first, last)
+    return balance(new_lst)
+
+print(balance(my_lst))
