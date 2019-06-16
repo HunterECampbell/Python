@@ -1,19 +1,49 @@
+import random
+
 def find_larger_lst(lst1, lst2):
-  if lst1 > lst2:
+  lst1_total = 0
+  lst2_total = 0
+  for item in lst1:
+    lst1_total += item
+  for item in lst2:
+    lst2_total += item
+  if lst1_total > lst2_total:
     return lst1
   return lst2
 
-my_lst = [0, 0, 0, 0, 0, 0, 1, 0]
+my_lst = []
+for num in range(0, 100):
+  my_lst.append(random.randint(0, 1000))
 
 def balance(lst):
-  if len(lst) == 1:
-    return lst
+  print("List:")
+  print(lst)
+  half = len(lst) // 2
+  first = lst[:half]
+  last = lst[half:]
+  if len(lst) == 2:
+    print
+    print("Largest number weighed out of all the largest halfs:")
+    return find_larger_lst(first, last)
   else:
-    half = len(lst) // 2
-    first = lst[:half]
-    last = lst[half:]
+    print
+    print("Split List:")
+    print(first)
+    print(last)
+
+    first_total = 0
+    last_total = 0
+    for item in first:
+      first_total += item
+    for item in last:
+      last_total += item
+    print
+    print("First Total: {}".format(first_total))
+    print("Last Total: {}".format(last_total))
+    print
 
     new_lst = find_larger_lst(first, last)
     return balance(new_lst)
 
+print
 print(balance(my_lst))
