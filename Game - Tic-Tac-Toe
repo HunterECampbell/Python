@@ -21,8 +21,7 @@ def print_board():
   print("|".join(board_values[2]))
 
 def update_board(value, player):
-  update = " " + player + " "
-  player = player.upper()
+  update = " " + player.upper() + " "
   if value == 1:
     board_values[0][0] = update
   elif value == 2:
@@ -51,8 +50,8 @@ def end_format(player):
   print_board()
 
 def check_win(player):
-  update = " " + player + " "
   player = player.upper()
+  update = " " + player + " "
   if (board_values[0][0] == update) and (board_values[1][0] == update) and (board_values[2][0] == update):
     end_format(player)
   elif (board_values[0][1] == update) and (board_values[1][1] == update) and (board_values[2][1] == update):
