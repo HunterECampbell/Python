@@ -50,7 +50,7 @@ def end_format(player):
   print
   print_board()
 
-def check_end_game(player):
+def check_win(player):
   update = " " + player + " "
   player = player.upper()
   if (board_values[0][0] == update) and (board_values[1][0] == update) and (board_values[2][0] == update):
@@ -106,5 +106,5 @@ while continue_game:
     continue_game = False
     print
     print_board()
-  check_end_game('x')
-  check_end_game('o')
+  check_win('x')
+  check_win('o')
