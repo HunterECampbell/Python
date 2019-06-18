@@ -21,25 +21,26 @@ def print_board():
   print("|".join(board_values[2]))
 
 def update_board(value, player):
+  update = " " + player + " "
   player = player.upper()
   if value == 1:
-    board_values[0][0] = " " + player + " "
+    board_values[0][0] = update
   elif value == 2:
-    board_values[0][1] = " " + player + " "
+    board_values[0][1] = update
   elif value == 3:
-    board_values[0][2] = " " + player + " "
+    board_values[0][2] = update
   elif value == 4:
-    board_values[1][0] = " " + player + " "
+    board_values[1][0] = update
   elif value == 5:
-    board_values[1][1] = " " + player + " "
+    board_values[1][1] = update
   elif value == 6:
-    board_values[1][2] = " " + player + " "
+    board_values[1][2] = update
   elif value == 7:
-    board_values[2][0] = " " + player + " "
+    board_values[2][0] = update
   elif value == 8:
-    board_values[2][1] = " " + player + " "
+    board_values[2][1] = update
   elif value == 9:
-    board_values[2][2] = " " + player + " "
+    board_values[2][2] = update
 
 def end_format(player):
   global continue_game
@@ -50,22 +51,23 @@ def end_format(player):
   print_board()
 
 def check_end_game(player):
+  update = " " + player + " "
   player = player.upper()
-  if (board_values[0][0] == " " + player + " ") and (board_values[1][0] == " " + player + " ") and (board_values[2][0] == " " + player + " "):
+  if (board_values[0][0] == update) and (board_values[1][0] == update) and (board_values[2][0] == update):
     end_format(player)
-  elif (board_values[0][1] == " " + player + " ") and (board_values[1][1] == " " + player + " ") and (board_values[2][1] == " " + player + " "):
+  elif (board_values[0][1] == update) and (board_values[1][1] == update) and (board_values[2][1] == update):
     end_format(player)
-  elif (board_values[0][2] == " " + player + " ") and (board_values[1][2] == " " + player + " ") and (board_values[2][2] == " " + player + " "):
+  elif (board_values[0][2] == update) and (board_values[1][2] == update) and (board_values[2][2] == update):
     end_format(player)
-  elif (board_values[0][0] == " " + player + " ") and (board_values[0][1] == " " + player + " ") and (board_values[0][2] == " " + player + " "):
+  elif (board_values[0][0] == update) and (board_values[0][1] == update) and (board_values[0][2] == update):
     end_format(player)
-  elif (board_values[1][0] == " " + player + " ") and (board_values[1][1] == " " + player + " ") and (board_values[1][2] == " " + player + " "):
+  elif (board_values[1][0] == update) and (board_values[1][1] == update) and (board_values[1][2] == update):
     end_format(player)
-  elif (board_values[2][0] == " " + player + " ") and (board_values[2][1] == " " + player + " ") and (board_values[2][2] == " " + player + " "):
+  elif (board_values[2][0] == update) and (board_values[2][1] == update) and (board_values[2][2] == update):
     end_format(player)
-  elif (board_values[0][0] == " " + player + " ") and (board_values[1][1] == " " + player + " ") and (board_values[2][2] == " " + player + " "):
+  elif (board_values[0][0] == update) and (board_values[1][1] == update) and (board_values[2][2] == update):
     end_format(player)
-  elif (board_values[0][2] == " " + player + " ") and (board_values[1][1] == " " + player + " ") and (board_values[2][0] == " " + player + " "):
+  elif (board_values[0][2] == update) and (board_values[1][1] == update) and (board_values[2][0] == update):
     end_format(player)
 
 
