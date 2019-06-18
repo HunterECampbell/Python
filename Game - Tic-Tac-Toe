@@ -1,0 +1,108 @@
+board_values = [
+  [" 1 ", " 2 ", " 3 "],
+  [" 4 ", " 5 ", " 6 "],
+  [" 7 ", " 8 ", " 9 "],
+]
+bottom = "-----------"
+
+
+x_turn = 1
+o_turn = 1
+continue_game = True
+xo = ["X", "O"]
+spots = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+def print_board():
+  print("|".join(board_values[0]))
+  print(bottom)
+  print("|".join(board_values[1]))
+  print(bottom)
+  print("|".join(board_values[2]))
+
+def update_board(value, player):
+  player = player.upper()
+  if value == 1:
+    board_values[0][0] = " " + player + " "
+  elif value == 2:
+    board_values[0][1] = " " + player + " "
+  elif value == 3:
+    board_values[0][2] = " " + player + " "
+  elif value == 4:
+    board_values[1][0] = " " + player + " "
+  elif value == 5:
+    board_values[1][1] = " " + player + " "
+  elif value == 6:
+    board_values[1][2] = " " + player + " "
+  elif value == 7:
+    board_values[2][0] = " " + player + " "
+  elif value == 8:
+    board_values[2][1] = " " + player + " "
+  elif value == 9:
+    board_values[2][2] = " " + player + " "
+
+def end_format(player):
+  global continue_game
+  print
+  print("Player {} won!".format(player))
+  continue_game = False
+  print
+  print_board()
+
+def check_end_game(player):
+  player = player.upper()
+  if (board_values[0][0] == " " + player + " ") and (board_values[1][0] == " " + player + " ") and (board_values[2][0] == " " + player + " "):
+    end_format(player)
+  elif (board_values[0][1] == " " + player + " ") and (board_values[1][1] == " " + player + " ") and (board_values[2][1] == " " + player + " "):
+    end_format(player)
+  elif (board_values[0][2] == " " + player + " ") and (board_values[1][2] == " " + player + " ") and (board_values[2][2] == " " + player + " "):
+    end_format(player)
+  elif (board_values[0][0] == " " + player + " ") and (board_values[0][1] == " " + player + " ") and (board_values[0][2] == " " + player + " "):
+    end_format(player)
+  elif (board_values[1][0] == " " + player + " ") and (board_values[1][1] == " " + player + " ") and (board_values[1][2] == " " + player + " "):
+    end_format(player)
+  elif (board_values[2][0] == " " + player + " ") and (board_values[2][1] == " " + player + " ") and (board_values[2][2] == " " + player + " "):
+    end_format(player)
+  elif (board_values[0][0] == " " + player + " ") and (board_values[1][1] == " " + player + " ") and (board_values[2][2] == " " + player + " "):
+    end_format(player)
+  elif (board_values[0][2] == " " + player + " ") and (board_values[1][1] == " " + player + " ") and (board_values[2][0] == " " + player + " "):
+    end_format(player)
+
+
+while continue_game:
+  if x_turn <= o_turn:
+    print
+    print("Player X's Turn")
+    print
+    print_board()
+    print
+    x_value = int(input("Choose a place to put 'X' on the board. (1-9) "))
+    while x_value not in spots:
+      print
+      x_value = int(input("Choose a place to put 'X' on the board. (1-9) "))
+    spots.remove(x_value)
+    update_board(x_value, "x")
+    x_turn += 1
+    print
+  else:
+    print
+    print("Player O's Turn")
+    print
+    print_board()
+    print
+    o_value = int(input("Choose a place to put 'O' on the board. (1-9) "))
+    while o_value not in spots:
+      print
+      o_value = int(input("Choose a place to put 'O' on the board. (1-9) "))
+    spots.remove(o_value)
+    update_board(o_value, "o")
+    o_turn += 1
+    print
+  if len(spots) < 1:
+    print
+    print("It's a tie.")
+    continue_game = False
+    print
+    print_board()
+  check_end_game('x')
+  check_end_game('o')
