@@ -17,7 +17,7 @@ def printAnimal(name):
   print("Legs: {}".format(name.legNumber))
   print("Mammal: {}".format(name.mammal))
   print("Reptile: {}".format(name.reptile))
-  print
+  print()
 
 printAnimal(zebra)
 printAnimal(snake)
