@@ -43,10 +43,10 @@ def update_board(value, player):
 
 def end_format(player):
   global continue_game
-  print
+  print()
   print("Player {} won!".format(player))
   continue_game = False
-  print
+  print()
   print_board()
 
 def check_win(player):
@@ -72,38 +72,38 @@ def check_win(player):
 
 while continue_game:
   if x_turn <= o_turn:
-    print
+    print()
     print("Player X's Turn")
-    print
+    print()
     print_board()
-    print
+    print()
     x_value = int(input("Choose a place to put 'X' on the board. (1-9) "))
     while x_value not in spots:
-      print
+      print()
       x_value = int(input("Choose a place to put 'X' on the board. (1-9) "))
     spots.remove(x_value)
     update_board(x_value, "x")
     x_turn += 1
-    print
+    print()
   else:
-    print
+    print()
     print("Player O's Turn")
-    print
+    print()
     print_board()
-    print
+    print()
     o_value = int(input("Choose a place to put 'O' on the board. (1-9) "))
     while o_value not in spots:
-      print
+      print()
       o_value = int(input("Choose a place to put 'O' on the board. (1-9) "))
     spots.remove(o_value)
     update_board(o_value, "o")
     o_turn += 1
-    print
+    print()
   if len(spots) < 1:
-    print
+    print()
     print("It's a tie.")
     continue_game = False
-    print
+    print()
     print_board()
   check_win('x')
   check_win('o')
