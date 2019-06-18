@@ -23,11 +23,11 @@ def balance(lst):
   last = lst[half:]
 
   if len(lst) == 2:
-    print
+    print()
     print("Largest number weighed out of all the largest halfs:")
     return find_larger_lst(first, last)
   else:
-    print
+    print()
     print("Split List:")
     print(first)
     print(last)
@@ -39,13 +39,13 @@ def balance(lst):
     for item in last:
       last_total += item
       
-    print
+    print()
     print("First Total: {}".format(first_total))
     print("Last Total: {}".format(last_total))
-    print
+    print()
 
     new_lst = find_larger_lst(first, last)
     return balance(new_lst)
 
-print
+print()
 print(balance(my_lst))
